@@ -40,6 +40,7 @@ class WanTextEncoder(torch.nn.Module):
         ids = ids.to(self.device)
         mask = mask.to(self.device)
         seq_lens = mask.gt(0).sum(dim=1).long()
+        self.text_encoder.to(self.device)
         context = self.text_encoder(ids, mask)
 
         for u, v in zip(context, seq_lens):

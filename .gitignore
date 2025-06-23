@@ -4,3 +4,5 @@ __pycache__
 wan_models
 checkpoints
 flash-attention/
+images/
+videos/
